@@ -1,0 +1,24 @@
+
+alias vim="lvim"
+alias bat="batcat"
+alias ll="ls -latr"
+alias banner="figlet"
+
+alias sys_update="sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y"
+
+# eval "$(oh-my-posh init bash --config '~/windows_c_drive/Users/ameyk/AppData/Local/Programs/oh-my-posh/themes/uew.omp.json')"
+export PATH="$PATH:/home/ameyk/vbcc/bin"
+#
+sleep 2s
+output=$(tmux new -s Default 2>&1)
+echo "command output : $output"
+if [[ $output == *"duplicate session:"* ]]; then
+    tmux a -t Default
+fi
+#
+echo -e ""
+echo -e "Press <ctrl-a> <d>      \t-> to detach current session"
+echo -e "Press <ctrl-a> <ctrl-s> \t-> to save current session"
+echo -e "Press <ctrl-a> <crtl-r> \t-> to restore current session"
+echo -e ""
+
